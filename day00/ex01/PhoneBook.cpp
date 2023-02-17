@@ -58,7 +58,7 @@ void    PhoneBook::init_index()
 }
 void    PhoneBook::print_contact(int    i)
 {
-    if(i >= std::min(index, 7))
+    if(i >= std::min(index, 8))
     {
         std::cout << "No such index exists in your contact list" << std::endl;
         return ;
@@ -91,7 +91,7 @@ void    PhoneBook::print_table()
     std::cout << "|";
     std::cout << std::setw(10) << "Nickname";
     std::cout << "|" << std::endl;
-    while(i < std::min(index, 7))
+    while(i < std::min(index, 8))
     {
         std::cout << "|";
         std::cout << std::setw(10) << i;
