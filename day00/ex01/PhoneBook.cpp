@@ -76,7 +76,6 @@ std::string crop_str(std::string    input)
         return (res);
     }
     return (input);
-
 }
 
 void    PhoneBook::print_table()

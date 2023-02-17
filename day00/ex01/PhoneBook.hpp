@@ -1,5 +1,8 @@
 #include "Contact.hpp"
 
+#ifndef PHONEBOOK_HPP
+#define PHONEBOOK_HPP
+
 class PhoneBook
 {
     private:
@@ -11,3 +14,5 @@ class PhoneBook
         void    print_contact(int i);
         void    print_table();
 };
+
+#endif

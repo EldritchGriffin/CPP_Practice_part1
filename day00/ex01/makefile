@@ -7,4 +7,6 @@ all : $(SRCS) $(HEADERS)
 	c++ $(CFLAGS) -o $(NAME) $(SRCS)
 
 clean : 
-	rm $(NAME)
+	rm -f $(NAME)
+
+re : clean all

@@ -1,5 +1,8 @@
 #include <iostream>
 
+#ifndef CONTACT_HPP
+#define CONTACT_HPP
+
 class Contact
 {
     private:
@@ -22,3 +25,5 @@ class Contact
         void print_details();
         void empty_attr();
 };
+
+#endif

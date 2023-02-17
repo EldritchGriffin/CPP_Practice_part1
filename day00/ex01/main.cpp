@@ -7,14 +7,23 @@ bool    is_valid(std::string input)
     while(input[i])
     {
         if(!std::isdigit(input[i]))
+        {
+            std::cout << "a contact's index can be digits only" << std::endl;
             return (false);
+        }
         i++;
     }
     if(input.empty())
+    {
+        std::cout << "empty values are not allowed" << std::endl;
         return (false);
+    }
     num = std::stoi(input);
     if(num < 0 || num > 7)
+    {
+        std::cout << "please choose a valid index" << std::endl;
         return (false);
+    }
     return (true);
 }
 
