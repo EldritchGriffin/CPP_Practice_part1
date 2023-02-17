@@ -7,18 +7,48 @@ void    PhoneBook::add_contact()
     contacts[index % 8].empty_attr();
     std::cout << "enter your contact's firstname" << std::endl;
     std::getline(std::cin, input, '\n');
+    if(input.empty())
+    {
+        std::cout << "empty values are not allowed" << std::endl;
+        contacts[index % 8].empty_attr();
+        return ;
+    }
     contacts[index % 8].set_firstname(input); 
     std::cout << "enter your contact's lastname" << std::endl;
     std::getline(std::cin, input, '\n');
+    if(input.empty())
+    {
+        std::cout << "empty values are not allowed" << std::endl;
+        contacts[index % 8].empty_attr();
+        return ;
+    }
     contacts[index % 8].set_lastname(input); 
     std::cout << "enter your contact's nickname" << std::endl;
     std::getline(std::cin, input, '\n');
+    if(input.empty())
+    {
+        std::cout << "empty values are not allowed" << std::endl;
+        contacts[index % 8].empty_attr();
+        return ;
+    }
     contacts[index % 8].set_nickname(input); 
     std::cout << "enter your contact's phone_number" << std::endl;
     std::getline(std::cin, input, '\n');
+    if(input.empty())
+    {
+        std::cout << "empty values are not allowed" << std::endl;
+        contacts[index % 8].empty_attr();
+        return ;
+    }
     contacts[index % 8].set_phone_number(input); 
     std::cout << "enter your contact's darkest_secret" << std::endl;
     std::getline(std::cin, input, '\n');
+    if(input.empty())
+    {
+        std::cout << "empty values are not allowed" << std::endl;
+        contacts[index % 8].empty_attr();
+        return ;
+    }
     contacts[index % 8].set_darkest_secret(input);
     index++; 
 }
