@@ -30,13 +30,12 @@ void    Harl::complain(std::string  level)
     while(i < 4)
     {
         if(level == levels[i])
-            break;
+        {
+            (this->*complainptr[i])();
+            return;
+        }
         i++;
     }
-    if(i == 4)
-    {
-        std::cout << "harl can't complain about " << level << std::endl;
-        return ;
-    }
-    (this->*complainptr[i])();
+    std::cout << "harl can't complain about " << level << std::endl;
+    return ;
 }
