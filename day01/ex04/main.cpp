@@ -1,26 +1,40 @@
 #include <iostream>
 #include <fstream>
 
-void replaceInFile(const std::string& filename, const std::string& s1, const std::string& s2) {
+void replaceInFile(const std::string& filename, const std::string& s1, const std::string& s2)
+{
     std::ifstream inputFile(filename);
-    if (!inputFile) {
+    std::string line;
+    if (!inputFile)
+    {
         std::cerr << "Error: Unable to open file " << filename << std::endl;
         return;
     }
     std::ofstream outputFile(filename + ".replace");
-    if (!outputFile) {
+    if (!outputFile)
+    {
         std::cerr << "Error: Unable to create output file " << filename << ".replace" << std::endl;
         return;
     }
-    std::string line;
-    while (std::getline(inputFile, line)) {
+    while (std::getline(inputFile, line))
+    {
         size_t pos = 0;
-        while ((pos = line.find(s1, pos)) != std::string::npos) {
-            line.replace(pos, s1.length(), s2);
-            pos += s2.length();
+        std::string newLine;
+        while (pos < line.length())
+        {
+            if (line.substr(pos, s1.length()) == s1)
+            {
+                newLine += s2;
+                pos += s1.length();
+            }
+            else 
+            {
+                newLine += line[pos];
+                pos++;
+            }
         }
-        outputFile << line << std::endl;
-    }
+        outputFile << newLine << std::endl;
+    }  
     inputFile.close();
     outputFile.close();
 }
