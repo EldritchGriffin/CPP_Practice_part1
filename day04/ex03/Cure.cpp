@@ -1,7 +1,8 @@
 #include "Cure.hpp"
 
-Cure::Cure() : AMateria("cure")
+Cure::Cure()
 {
+    this->type = "cure";
     std::cout << "Cure's default constructor called" << std::endl;
 }
 
